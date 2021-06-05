@@ -19,4 +19,4 @@ Replicating the snake game in Python. (Python is a snake lol)
 # What is to be done
 - make long snake animation better
 - make it detect crashing into self
-
+- scoreboard and storing in text file
