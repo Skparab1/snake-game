@@ -1,7 +1,6 @@
 # snake-game
 Replicating the snake game in Python. (Python is a snake lol)
 # snake game demo
-![](snake_game_demo.gif)
 # How to play
 - The snake will start moving
 - Press control + c to turn. The computer will decide which way to turn based on the position of the obstacle.
