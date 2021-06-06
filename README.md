@@ -18,7 +18,7 @@ Replicating the snake game in Python. (Python is a snake lol)
 - scoring
 - detects crashing into yourself
   - technically it would be pretty hard to crash because it automatically turns you towards the object when you turn
-  - the only way you can crash into yourself is if you eat something in one direction and then do back to the other directiona nd crash into yourself
+  - the only way you can crash into yourself is if you eat something in one direction and then do back to the other direction and crash into yourself
 # What is to be done
 - make long snake animation better
 - scoreboard and storing in text file
