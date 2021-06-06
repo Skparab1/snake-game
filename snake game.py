@@ -15,8 +15,8 @@ def printarena():
     print('Score',score)
 def removeball():
     global l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18, eraser, length
-    if eraser == length:
-        l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18 = l1.replace('o',' '),l2.replace('o',' '),l3.replace('o',' '),l4.replace('o',' '),l5.replace('o',' '),l6.replace('o',' '),l7.replace('o',' '),l8.replace('o',' '),l9.replace('o',' '),l10.replace('o',' '),l11.replace('o',' '),l12.replace('o',' '),l13.replace('o',' '),l14.replace('o',' '),l15.replace('o',' '),l16.replace('o',' '),l17.replace('o',' '),l18.replace('o',' ')
+    if eraser == length and True:
+        l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18 = l1.replace('O',' '),l2.replace('O',' '),l3.replace('O',' '),l4.replace('O',' '),l5.replace('O',' '),l6.replace('O',' '),l7.replace('O',' '),l8.replace('O',' '),l9.replace('O',' '),l10.replace('O',' '),l11.replace('O',' '),l12.replace('O',' '),l13.replace('O',' '),l14.replace('O',' '),l15.replace('O',' '),l16.replace('O',' '),l17.replace('O',' '),l18.replace('O',' ')
         eraser = 0
     eraser += 1
 def removeobstacle():
@@ -33,13 +33,13 @@ def addball(line):
     global pos
     linepart1 = line[:pos-1]
     linepart2 = line[pos:]
-    line = linepart1 + 'o' + linepart2
+    line = linepart1 + 'O' + linepart2
     return line
 pos = 50
 eraser = 1
 randpos = randint(2,98)
 randheight = randint(2,17)
-l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18 = ' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,((' '*8)+'o'+(' '*90)),' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99
+l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18 = ' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,((' '*8)+'O'+(' '*90)),' '*99,' '*99,' '*99,' '*99,' '*99,' '*99,' '*99
 addobstacle()
 score = 0
 direction = 'right'
@@ -49,9 +49,9 @@ height = 11
 while True:
     try:
         if direction == 'right' or direction == 'left':
-            time.sleep(0.07)
+            time.sleep(0.1)
         else:
-            time.sleep(0.12)
+            time.sleep(0.2)
         printarena()
         ln = height #ln = 1 if ('o' in l1 ) else (2 if ('o' in l2 ) else (3 if ('o' in l3 ) else (4 if ('o' in l4 ) else (5 if ('o' in l5 ) else (6 if ('o' in l6 ) else (7 if ('o' in l7 ) else (8 if ('o' in l8 ) else (9 if ('o' in l9 ) else (10 if ('o' in l10 ) else (11 if ('o' in l11 ) else (12 if ('o' in l12 ) else (13 if ('o' in l13 ) else (14 if ('o' in l14 ) else (15 if ('o' in l15 ) else (16 if ('o' in l16 ) else (17 if ('o' in l17 ) else 18))))))))))))))))
         if turningmode == True:
@@ -76,7 +76,7 @@ while True:
                 height -= 1
                 removeball()
                 l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l6,l17 = (addball(l1) if ln == 2 else l1),(addball(l2) if ln == 3 else l2),(addball(l3) if ln == 4 else l3),(addball(l4) if ln == 5 else l4),(addball(l5) if ln == 6 else l5),(addball(l6) if ln == 7 else l6),(addball(l7) if ln == 8 else l7),(addball(l8) if ln == 9 else l8),(addball(l9) if ln == 10 else l9),(addball(l10) if ln == 11 else l10),(addball(l11) if ln == 12 else l11),(addball(l12) if ln == 13 else l12),(addball(l13) if ln == 14 else l13),(addball(l14) if ln == 15 else l14),(addball(l15) if ln == 16 else l15),(addball(l16) if ln == 17 else l16),(addball(l17) if ln == 18 else l17)
-            if pos >= 100 or pos <= 1 or height >= 19 or height <= -1:
+            if pos >= 100 or pos <= 0 or height >= 19 or height <= -1:
                 print('you have crashed into the wall')
                 break
             if height == randheight and pos == randpos:
@@ -86,15 +86,19 @@ while True:
                 randheight = randint(2,17)
                 addobstacle()
                 length += 1
+            lcont = l1 if ('o' in l1 ) else (l2 if ('o' in l2 ) else (l3 if ('o' in l3 ) else (l4 if ('o' in l4 ) else (l5 if ('o' in l5 ) else (l6 if ('o' in l6 ) else (l7 if ('o' in l7 ) else (l8 if ('o' in l8 ) else (l9 if ('o' in l9 ) else (l10 if ('o' in l10 ) else (l11 if ('o' in l11 ) else (l12 if ('o' in l12 ) else (l13 if ('o' in l13 ) else (l14 if ('o' in l14 ) else (l15 if ('o' in l15 ) else (l16 if ('o' in l16 ) else (l17 if ('o' in l17 ) else l18))))))))))))))))
+            if lcont[pos] == 'O':
+                print('You have hit yourself')
+                break
             #if direction == 'up':
                 #l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18 = (removeball(l1) if ln == 1 else l1), (removeball(l2) if ln == 2 else l2),(removeball(l3) if ln == 3 else l3),(removeball(l4) if ln == 4 else l4),(removeball(l5) if ln == 5 else l5),(removeball(l6) if ln == 6 else (addball if ln == 1 else l6)),(removeball(l7) if ln == 7 else (addball if ln == 2 else l7)),(removeball(l8) if ln == 8 else (addball if ln == 3 else l8)),(removeball(l9) if ln == 9 else (addball if ln == 4 else l9)),(removeball(l10) if ln == 10 else (addball if ln == 5 else l10)),(removeball(l11) if ln == 11 else (addball if ln == 6 else l11)),(removeball(l12) if ln == 12 else (addball if ln == 7 else l12)),(removeball(l13) if ln == 13 else (addball if ln == 8 else l13)),(removeball(l14) if ln == 14 else (addball if ln == 9 else l14)),(removeball(l15) if ln == 15 else (addball if ln == 10 else l15)),(removeball(l16) if ln == 16 else (addball if ln == 11 else l16)),(removeball(l17) if ln == 17 else (addball if ln == 12 else l17)),(removeball(18) if ln == 18 else (addball if ln == 13 else l18))
             #if direction == 'down':
                 #l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18 = (addball(l1) if ln == 1 else l1),(addball(l2) if ln == 2 else l2),(addball(l3) if ln == 3 else l3),(addball(l4) if ln == 4 else l4),(addball(l5) if ln == 5 else l5),(addball(l6) if ln == 6 else (removeball if ln == 1 else l6)),(addball(l7) if ln == 7 else (removeball if ln == 2 else l7)),(addball(l8) if ln == 8 else (removeball if ln == 3 else l8)),(addball(l9) if ln == 9 else (removeball if ln == 4 else l9)),(addball(l10) if ln == 10 else (removeball if ln == 5 else l10)),(addball(l11) if ln == 11 else (removeball if ln == 6 else l11)),(addball(l12) if ln == 12 else (removeball if ln == 7 else l12)),(addball(l13) if ln == 13 else (removeball if ln == 8 else l13)),(addball(l14) if ln == 14 else (removeball if ln == 9 else l14)),(addball(l15) if ln == 15 else (removeball if ln == 10 else l15)),(addball(l16) if ln == 16 else (removeball if ln == 11 else l16)),(addball(l17) if ln == 17 else (removeball if ln == 12 else l17)),(addball(l18) if ln == 18 else (removeball if ln == 13 else l18))
     except:
         #ln = 1 if ('o' in l1 ) else (2 if ('o' in l2 ) else (3 if ('o' in l3 ) else (4 if ('o' in l4 ) else (5 if ('o' in l5 ) else (6 if ('o' in l6 ) else (7 if ('o' in l7 ) else (8 if ('o' in l8 ) else (9 if ('o' in l9 ) else (10 if ('o' in l10 ) else (11 if ('o' in l11 ) else (12 if ('o' in l12 ) else (13 if ('o' in l13 ) else (14 if ('o' in l14 ) else (15 if ('o' in l15 ) else (16 if ('o' in l16 ) else (17 if ('o' in l17 ) else 18))))))))))))))))
-        lcont = l1 if ('o' in l1 ) else (l2 if ('o' in l2 ) else (l3 if ('o' in l3 ) else (l4 if ('o' in l4 ) else (l5 if ('o' in l5 ) else (l6 if ('o' in l6 ) else (l7 if ('o' in l7 ) else (l8 if ('o' in l8 ) else (l9 if ('o' in l9 ) else (l10 if ('o' in l10 ) else (l11 if ('o' in l11 ) else (l12 if ('o' in l12 ) else (l13 if ('o' in l13 ) else (l14 if ('o' in l14 ) else (l15 if ('o' in l15 ) else (l16 if ('o' in l16 ) else (l17 if ('o' in l17 ) else l18))))))))))))))))
-        lcontbelow = l1 if ('o' in l1 ) else (l1 if ('o' in l2 ) else (l2 if ('o' in l3 ) else (l4 if ('o' in l5 ) else (l5 if ('o' in l6 ) else (l6 if ('o' in l7 ) else (l7 if ('o' in l8 ) else (l8 if ('o' in l9 ) else (l9 if ('o' in l10 ) else (l10 if ('o' in l11 ) else (l11 if ('o' in l12 ) else (l12 if ('o' in l13 ) else (l13 if ('o' in l14 ) else (l14 if ('o' in l15 ) else (l15 if ('o' in l16 ) else (l16 if ('o' in l17 ) else (l17 if ('o' in l18 ) else l18))))))))))))))))
-        lcontabove = l2 if ('o' in l1 ) else (l3 if ('o' in l2 ) else (l4 if ('o' in l3 ) else (l5 if ('o' in l4 ) else (l6 if ('o' in l5 ) else (l7 if ('o' in l6 ) else (l8 if ('o' in l7 ) else (l9 if ('o' in l8 ) else (l10 if ('o' in l9 ) else (l11 if ('o' in l10 ) else (l12 if ('o' in l11 ) else (l13 if ('o' in l12 ) else (l14 if ('o' in l13 ) else (l15 if ('o' in l14 ) else (l16 if ('o' in l15 ) else (l16 if ('o' in l16 ) else (l18 if ('o' in l17 ) else l18))))))))))))))))
+        #lcont = l1 if ('o' in l1 ) else (l2 if ('o' in l2 ) else (l3 if ('o' in l3 ) else (l4 if ('o' in l4 ) else (l5 if ('o' in l5 ) else (l6 if ('o' in l6 ) else (l7 if ('o' in l7 ) else (l8 if ('o' in l8 ) else (l9 if ('o' in l9 ) else (l10 if ('o' in l10 ) else (l11 if ('o' in l11 ) else (l12 if ('o' in l12 ) else (l13 if ('o' in l13 ) else (l14 if ('o' in l14 ) else (l15 if ('o' in l15 ) else (l16 if ('o' in l16 ) else (l17 if ('o' in l17 ) else l18))))))))))))))))
+        #lcontbelow = l1 if ('o' in l1 ) else (l1 if ('o' in l2 ) else (l2 if ('o' in l3 ) else (l4 if ('o' in l5 ) else (l5 if ('o' in l6 ) else (l6 if ('o' in l7 ) else (l7 if ('o' in l8 ) else (l8 if ('o' in l9 ) else (l9 if ('o' in l10 ) else (l10 if ('o' in l11 ) else (l11 if ('o' in l12 ) else (l12 if ('o' in l13 ) else (l13 if ('o' in l14 ) else (l14 if ('o' in l15 ) else (l15 if ('o' in l16 ) else (l16 if ('o' in l17 ) else (l17 if ('o' in l18 ) else l18))))))))))))))))
+        #lcontabove = l2 if ('o' in l1 ) else (l3 if ('o' in l2 ) else (l4 if ('o' in l3 ) else (l5 if ('o' in l4 ) else (l6 if ('o' in l5 ) else (l7 if ('o' in l6 ) else (l8 if ('o' in l7 ) else (l9 if ('o' in l8 ) else (l10 if ('o' in l9 ) else (l11 if ('o' in l10 ) else (l12 if ('o' in l11 ) else (l13 if ('o' in l12 ) else (l14 if ('o' in l13 ) else (l15 if ('o' in l14 ) else (l16 if ('o' in l15 ) else (l16 if ('o' in l16 ) else (l18 if ('o' in l17 ) else l18))))))))))))))))
         if direction == 'right' or direction == 'left':
             if randheight <= height:
                 direction = 'down'
