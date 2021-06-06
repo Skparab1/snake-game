@@ -16,6 +16,8 @@ Replicating the snake game in Python. (Python is a snake lol)
 - detecting crashing into wall
 - increasing length of snake
 - scoring
+- detects crashing into yourself
+  - technically it would be pretty hard to crash
 # What is to be done
 - make long snake animation better
 - scoreboard and storing in text file
