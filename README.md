@@ -17,7 +17,7 @@ Replicating the snake game in Python. (Python is a snake lol)
 - increasing length of snake
 - scoring
 - detects crashing into yourself
-  - technically it would be pretty hard to crash
+  - technically it would be pretty hard to crash because it automatically turns you towards the object when you turn
 # What is to be done
 - make long snake animation better
 - scoreboard and storing in text file
