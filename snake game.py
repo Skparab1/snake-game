@@ -51,7 +51,7 @@ while True:
         if direction == 'right' or direction == 'left':
             time.sleep(0.1)
         else:
-            time.sleep(0.2)
+            time.sleep(0.15)
         printarena()
         ln = height #ln = 1 if ('o' in l1 ) else (2 if ('o' in l2 ) else (3 if ('o' in l3 ) else (4 if ('o' in l4 ) else (5 if ('o' in l5 ) else (6 if ('o' in l6 ) else (7 if ('o' in l7 ) else (8 if ('o' in l8 ) else (9 if ('o' in l9 ) else (10 if ('o' in l10 ) else (11 if ('o' in l11 ) else (12 if ('o' in l12 ) else (13 if ('o' in l13 ) else (14 if ('o' in l14 ) else (15 if ('o' in l15 ) else (16 if ('o' in l16 ) else (17 if ('o' in l17 ) else 18))))))))))))))))
         if turningmode == True:
